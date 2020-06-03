@@ -1,22 +1,21 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import HelloWorld from "./HelloWorld";
+import MovieCard from "./MovieCard.js";
+import ImdbHeader from "./ImdbHeader.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <HelloWorld />
-        <HelloWorld />
-        <HelloWorld />
-        <HelloWorld />
-        <HelloWorld />
-        <HelloWorld />
-        <HelloWorld />
-        <HelloWorld />
-        <footer>Copyright</footer>
-      </header>
+      <ImdbHeader />
+      <div className="movie-wrapper">
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.movie-card-container {
+  color: black;
+  background: #efefef;
+  border: 2px solid red;
+  width: 20%;
+}
+img {
+  width: 100%;
+}

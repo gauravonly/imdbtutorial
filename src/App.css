@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -26,6 +26,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.movie-wrapper {
+  display: flex;
+  flex-flow: row wrap;
 }
 
 @keyframes App-logo-spin {
