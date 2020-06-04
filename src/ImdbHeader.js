@@ -14,8 +14,19 @@ export default class ImdbHeader extends React.Component {
       headerText: "My Header"
     };
   }
+
+  getClass = () => {
+    const { headerText } = this.state;
+    const lengthOfHeadertext = headerText.length;
+    // const classes = ["class1", "class2"];
+    // const newclass = `${classes[0]} class2`; // concatenation - template string
+    return lengthOfHeadertext > 10 ? "class2" : "class1";
+  };
+
   render() {
     const { headerText } = this.state;
-    return <header>{headerText}</header>;
+    const myClass = this.getClass();
+
+    return <header className={myClass}>{headerText}</header>;
   }
 }

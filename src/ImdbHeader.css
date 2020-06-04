@@ -1,4 +1,4 @@
-header {
+.myheader {
   background: black;
   color: white;
   height: 10vh;
@@ -6,4 +6,12 @@ header {
   align-items: center;
   justify-content: center;
   font-weight: bolder;
+}
+
+.class1 {
+  font-size: 24px;
+}
+
+.class2 {
+  font-size: 8px;
 }
