@@ -1,8 +1,25 @@
 .movie-card-container {
   color: black;
   background: #efefef;
-  border: 2px solid red;
-  width: 20%;
+  width: 27%;
+  margin: 2% 0;
+  cursor: pointer;
+}
+.movie-card-container:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in;
+}
+
+.movie-title {
+  color: red;
+  font-size: 18px;
+  padding: 5%;
+  width: 80%;
+}
+.movie-details {
+  font-size: 12px;
+  padding: 5%;
 }
 img {
   width: 100%;

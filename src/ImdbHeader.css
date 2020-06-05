@@ -8,10 +8,22 @@
   font-weight: bolder;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 5px solid black;
+}
+
 .class1 {
   font-size: 24px;
+  text-align: center;
+  background: #efefef;
+  height: 10vh;
 }
 
 .class2 {
   font-size: 8px;
+  text-align: center;
 }

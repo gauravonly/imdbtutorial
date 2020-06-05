@@ -1,6 +1,6 @@
-/* .App {
-  text-align: center;
-} */
+.App {
+  font-family: "Rubik", sans-serif;
+}
 
 .App-logo {
   height: 40vmin;
@@ -31,6 +31,7 @@
 .movie-wrapper {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 @keyframes App-logo-spin {

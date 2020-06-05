@@ -9,59 +9,72 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      movieDetails: [
-        {
-          id: 1,
-          name: "Starwars",
-          poster:
-            "https://image.shutterstock.com/image-photo/tokyo-japan-feb-19-2017-260nw-612277085.jpg",
-          rating: 8,
-          details:
-            " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-          id: 2,
-          name: "Lord Of the Rings",
-          poster:
-            "https://image.shutterstock.com/image-photo/tokyo-japan-feb-19-2017-260nw-612277085.jpg",
-          rating: 9,
-          details:
-            " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-          id: 3,
-          name: "Twilight",
-          poster:
-            "https://image.shutterstock.com/image-photo/tokyo-japan-feb-19-2017-260nw-612277085.jpg",
-          rating: 7,
-          details:
-            " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-          id: 4,
-          name: "Troy",
-          poster:
-            "https://image.shutterstock.com/image-photo/tokyo-japan-feb-19-2017-260nw-612277085.jpg",
-          rating: 4,
-          details:
-            " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-          id: 5,
-          name: "Loney Tunes",
-          poster:
-            "https://image.shutterstock.com/image-photo/tokyo-japan-feb-19-2017-260nw-612277085.jpg",
-          rating: 6,
-          details:
-            " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        }
-      ],
+      movieData: {
+        id: 1,
+        addedToWatchList: false,
+        name: "Starwars",
+        poster:
+          "https://image.shutterstock.com/image-photo/tokyo-japan-feb-19-2017-260nw-612277085.jpg",
+        rating: 8,
+        details:
+          " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      addedToWatchList: false,
       isLoggedIn: true
     };
   }
 
+  // changeButtonState = () => {
+  //   console.log("reached");
+  //   this.setState({
+  //     movieData: {
+  //       id: 1,
+  //       name: "Starwars",
+  //       poster:
+  //         "https://image.shutterstock.com/image-photo/tokyo-japan-feb-19-2017-260nw-612277085.jpg",
+  //       rating: 8,
+  //       details:
+  //         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  //     }
+  //   });
+  // };
+
+  changeButtonState = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("reached target", e, e.target);
+    const { addedToWatchList } = this.state;
+    console.log("addedToWatchList", addedToWatchList); //false
+    this.setState({
+      addedToWatchList: !addedToWatchList
+    });
+    console.log("addedToWatchList after change", this.state.addedToWatchList);
+  };
+
+  getAddRemoveButton = addedToWatchList => {
+    if (addedToWatchList) {
+      return (
+        <button className="remove-to" onClick={this.changeButtonState}>
+          Remove From WatchList
+        </button>
+      );
+    } else {
+      return (
+        <button className="add-to" onClick={this.changeButtonState}>
+          Add To WatchList
+        </button>
+      );
+    }
+  };
+
   render() {
-    const { movieDetails, isLoggedIn } = this.state;
+    // function will rungain only if we change state using setState and setState is a defined fucntion is react
+    const { isLoggedIn, movieData, addedToWatchList } = this.state;
+
+    const { id, name, poster, rating, details } = movieData;
+    console.log("movieData", movieData);
+
+    const myButton = this.getAddRemoveButton(addedToWatchList);
 
     // const authComponent = () => {
     //   if (isLoggedIn) {
@@ -99,16 +112,19 @@ class App extends React.Component {
       <div className="App">
         <ImdbHeader />
         <div className="movie-wrapper">
-          {movieDetails.map((movieData, index) => {
-            const { id, name, poster, rating, details } = movieData;
-            return (
-              <div className="movie-card-container">
-                <img src={poster} alt="movie poster" />
-                <div>{name}</div>
-                <div>{details}</div>
-              </div>
-            );
-          })}
+          <div className="movie-card-container">
+            <img src={poster} alt="movie poster" />
+            {addedToWatchList && (
+              <img
+                src="./src/check.png"
+                alt="check"
+                style={{ width: "20px", height: "20px;" }}
+              />
+            )}
+            {myButton}
+            <div className="movie-title">{name}</div>
+            <div className="movie-details">{details}</div>
+          </div>
         </div>
       </div>
     );
