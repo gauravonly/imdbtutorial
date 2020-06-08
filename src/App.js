@@ -29,7 +29,7 @@ class App extends React.Component {
           name: "Lord Of the Rings",
           addedToWatchList: false,
           poster:
-            "https://cdn.vox-cdn.com/thumbor/f9dT1Qj9QBrKr9vrTHCcGejtCjY=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/9427327/star_wars_poster.jpg",
+            "https://images-na.ssl-images-amazon.com/images/I/8150KG7y2EL.jpg",
           rating: 9,
           details:
             " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -39,7 +39,7 @@ class App extends React.Component {
           name: "Twilight",
           addedToWatchList: false,
           poster:
-            "https://cdn.vox-cdn.com/thumbor/f9dT1Qj9QBrKr9vrTHCcGejtCjY=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/9427327/star_wars_poster.jpg",
+            "https://m.media-amazon.com/images/M/MV5BNDMwNjAzNzYwOF5BMl5BanBnXkFtZTcwMDY5NzcyMw@@._V1_.jpg",
           rating: 7,
           details:
             " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -49,17 +49,17 @@ class App extends React.Component {
           name: "Troy",
           addedToWatchList: false,
           poster:
-            "https://cdn.vox-cdn.com/thumbor/f9dT1Qj9QBrKr9vrTHCcGejtCjY=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/9427327/star_wars_poster.jpg",
+            "https://images.wolfgangsvault.com/m/xlarge/ZZZ060836-PO/troy-poster-may-14-2004.webp",
           rating: 4,
           details:
             " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
         {
           id: 5,
-          name: "Loney Tunes",
+          name: "Looney Tunes",
           addedToWatchList: false,
           poster:
-            "https://cdn.vox-cdn.com/thumbor/f9dT1Qj9QBrKr9vrTHCcGejtCjY=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/9427327/star_wars_poster.jpg",
+            "https://images-na.ssl-images-amazon.com/images/I/71pGumdHYQL._AC_SY741_.jpg",
           rating: 6,
           details:
             " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
