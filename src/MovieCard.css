@@ -1,26 +1,96 @@
 .movie-card-container {
   color: black;
-  background: #efefef;
-  width: 27%;
-  margin: 2% 0;
+  background: rgb(26, 26, 26);
+  width: 22%;
+  margin: 5% 0;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
+.movie-card-container:hover .poster {
+  opacity: 0.5;
+  transition: opacity 0.1s ease-in;
+}
+
 .movie-card-container:hover {
-  opacity: 0.8;
-  transform: scale(1.05);
+  transform: scale(1.02);
   transition: transform 0.1s ease-in;
+  border: 3px solid green;
+}
+
+.movie-card-container .poster {
+  height: 40vh;
+}
+.rating {
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+.rating-icon {
+  padding-right: 2%;
+  width: 14px;
+  height: 14px;
+}
+
+.add-to,
+.remove-to {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  height: 35px;
+  width: 30px;
+  background: rgba(255, 255, 255, 0.32);
+  color: white;
+  padding-top: 2%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.add-to::after,
+.remove-to::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid rgba(0, 0, 0, 0.2);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  bottom: 0;
+}
+.check-icon {
+  position: absolute;
+  right: 2%;
+  top: 2%;
 }
 
 .movie-title {
-  color: red;
-  font-size: 18px;
-  padding: 5%;
+  color: white;
+  font-size: 25px;
+  padding: 2% 2% 2% 5%;
   width: 80%;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
+
+.movie-title:hover {
+  text-shadow: 1px 1px 2px white;
+  color: rgb(245, 197, 24);
+}
+
+.movie-details:hover {
+  text-shadow: 1px 1px 3px white;
+}
+
 .movie-details {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
-  padding: 5%;
+  padding: 2% 5% 5% 5%;
 }
+
 img {
   width: 100%;
 }
