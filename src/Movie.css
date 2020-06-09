@@ -1,0 +1,13 @@
+.movie-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-top: 10vh;
+  position: relative;
+}
+.resetButton {
+  position: absolute;
+  top: 10vh;
+  right: 2vw;
+  cursor: pointer;
+}

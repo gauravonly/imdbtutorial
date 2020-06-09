@@ -8,10 +8,18 @@
   font-weight: bolder;
 }
 
+.navbar {
+  background: #121212;
+}
+.logo {
+  width: 80px;
+  height: 40px;
+  border-radius: 4px;
+}
+
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
   font-weight: 700;
   border: 5px solid black;
 }
@@ -24,6 +32,5 @@ header {
 }
 
 .class2 {
-  font-size: 8px;
   text-align: center;
 }

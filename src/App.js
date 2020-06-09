@@ -1,17 +1,14 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import MovieCard from "./MovieCard.js";
 import ImdbHeader from "./ImdbHeader.js";
-import "./MovieCard.css";
-import check from "./check.png";
+import Movie from "./Movie.js";
+import Rating from "./Rating.js";
 import star from "./star.png";
-import MyComp from "./MyComp";
-import MyChild from "./MyChild";
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       movieData: [
         {
@@ -64,8 +61,7 @@ class App extends React.Component {
           details:
             " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }
-      ],
-      isLoggedIn: true
+      ]
     };
   }
 
@@ -119,6 +115,15 @@ class App extends React.Component {
     // });
   };
 
+  resetFunction = () => {
+    const { movieData } = this.state;
+    this.setState({
+      movieData: movieData.map(el => {
+        return { ...el, addedToWatchList: false };
+      })
+    });
+  };
+
   getAddRemoveButton = (index, addedToWatchList) => {
     // This function would return you the button Component with set index
     if (addedToWatchList) {
@@ -139,97 +144,18 @@ class App extends React.Component {
     }
   };
 
-  newFunc = name => {
-    console.log("called from child", name);
-  };
-
   render() {
-    // function will rungain only if we change state using setState and setState is a defined fucntion is react
-    const { isLoggedIn, movieData, addedToWatchList } = this.state;
-
-    console.log("movieData", movieData);
-
-    // const authComponent = () => {
-    //   if (isLoggedIn) {
-    //     return <button>Logout</button>;
-    //   } else {
-    //     return <button>Login</button>;
-    //   }
-    // };
-
-    // const AuthButton = () => {
-    //   switch (isLoggedIn) {
-    //     case true:
-    //       return <button>Logout</button>;
-    //       break;
-    //     case false:
-    //       return <button>Login</button>;
-    //       break;
-    //   }
-    // };
-
-    // let AuthButton;
-    // if (isLoggedIn) {
-    //   AuthButton = <button>Logout</button>;
-    // } else {
-    //   AuthButton = <button>Login</button>;
-    // }
-
-    // if (isLoggedIn) {
-    //   return <button>Logout</button>;
-    // } else {
-    //   return <button>Login</button>;
-    // }
-
+    const { movieData } = this.state;
     return (
       <div className="App">
-        <MyComp
-          detail="my comp Component details"
-          details2="this is detail 2"
-          id="2"
-          color="red"
+        <ImdbHeader movieData={movieData} />
+        <Movie
           movieData={movieData}
-          newFunc={this.newFunc}
-        >
-          <MyChild />
-        </MyComp>
-        <ImdbHeader />
-        <div className="movie-wrapper">
-          {movieData.map((movie, index) => {
-            const {
-              id,
-              name,
-              poster,
-              rating,
-              details,
-              addedToWatchList
-            } = movie;
-            return (
-              <div className="movie-card-container">
-                <img className="poster" src={poster} alt="movie poster" />
-                {addedToWatchList && (
-                  <img
-                    className="check-icon"
-                    src={check}
-                    alt="check"
-                    style={{ width: "20px", height: "20px" }}
-                  />
-                )}
-                {
-                  // here in getAddRemoveButton we would pass the id from lopped  movie and addedToWatchList value
-                }
-
-                {this.getAddRemoveButton(id, addedToWatchList)}
-                <div className="rating">
-                  <img className="rating-icon" src={star} alt="rating" />
-                  {rating}
-                </div>
-                <div className="movie-title">{name}</div>
-                <div className="movie-details">{details}</div>
-              </div>
-            );
-          })}
-        </div>
+          filteredArray={this.filteredArray}
+          changeButtonState={this.changeButtonState}
+          resetFunction={this.resetFunction}
+          getAddRemoveButton={this.getAddRemoveButton}
+        />
       </div>
     );
   }
