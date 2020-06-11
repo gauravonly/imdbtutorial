@@ -150,6 +150,7 @@ class App extends React.Component {
     const { movieData } = this.state;
     return (
       <div className="App">
+        <ImdbHeader movieData={movieData} />
         <Movie
           movieData={movieData}
           filteredArray={this.filteredArray}

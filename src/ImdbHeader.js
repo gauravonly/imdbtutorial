@@ -1,6 +1,6 @@
 import React from "react";
 import "./ImdbHeader.css";
-
+import { Link } from "react-router-dom";
 // this is a funcitonal component
 // export default function ImdbHeader() {
 //   return <header>My Header </header>;
@@ -50,44 +50,19 @@ export default class ImdbHeader extends React.Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/" target="_self">
                 Home <span className="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Trailers
-              </a>
+              <Link to="/actors" target="_self">
+                Actors
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Recommended
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Streaming
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Born Today
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                News
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Movies/Show
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                People
-              </a>
+              <Link to="/awards" target="_self">
+                Awards
+              </Link>
             </li>
           </ul>
         </div>
